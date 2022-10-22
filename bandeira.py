@@ -1,10 +1,14 @@
 from PIL import Image
+
 BRANCO = (255,255,255)
 def tricolor_horizontal(comprimento, altura):
     bandeira = Image.new("RGB", (comprimento,altura), BRANCO)
     cor = [BRANCO, BRANCO, BRANCO]
+    print("Primeira cor: ")
     cor[0] = [int(c) for c in input().split()]
+    print("Segunda cor:")
     cor[1] = [int(c) for c in input().split()]
+    print("Terceira cor:")
     cor[2] = [int(c) for c in input().split()]
     for i in range(comprimento):
         if i < comprimento/3:
@@ -23,4 +27,7 @@ def tricolor_horizontal(comprimento, altura):
                 bandeira.putpixel((i,j),(cor[2][0],cor[2][1],cor[2][2]))
                 j += 1
     bandeira.show()
-tricolor_horizontal(360,240)
+
+a = int(input("Digite o comprimento: "))
+b = int(input("Digite a altura: "))
+tricolor_horizontal(a,b)
